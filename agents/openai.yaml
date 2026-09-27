@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Reliability Guard"
+  short_description: "Supervise long and high-risk Codex work"
+  default_prompt: "Use $codex-reliability-guard to supervise this task for scope, state, evidence, correction, and completion drift."

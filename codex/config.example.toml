@@ -1,0 +1,25 @@
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 4
+default_subagent_reasoning_effort = "high"
+interrupt_message = true
+
+[agents.reliability_sentinel]
+description = "Standing read-only reliability supervisor for scope, state, evidence, corrections, and completion."
+config_file = "./agents/reliability-sentinel.toml"
+
+[agents.cold_context_reviewer]
+description = "Independent read-only reviewer that re-anchors a degraded long-context task from minimal current evidence."
+config_file = "./agents/cold-context-reviewer.toml"
+
+[agents.semantic_preservation_reviewer]
+description = "Independent read-only reviewer for semantic, scientific-content, attribution, and evaluation-baseline regressions."
+config_file = "./agents/semantic-preservation-reviewer.toml"
+
+[agents.novelty_adversary]
+description = "Independent read-only adversary that tries to invalidate research novelty using direct prior art and mechanism-level comparison."
+config_file = "./agents/novelty-adversary.toml"
+
+[agents.technical_adversary]
+description = "Independent read-only adversary that tries to falsify the controlling mathematical, algorithmic, data, experiment, or implementation claim."
+config_file = "./agents/technical-adversary.toml"
